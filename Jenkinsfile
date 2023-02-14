@@ -16,7 +16,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-          npx playwright test
+          npx playwright test jenkins-homepage.spec.ts
         '''
       }
     }
