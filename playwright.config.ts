@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv'
 dotenv.config();
 
 const config: PlaywrightTestConfig = {
-  testDir: './tests',
+  testDir: './test',
   use: {
     headless: true
   },
