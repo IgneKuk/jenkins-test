@@ -4,6 +4,9 @@ pipeline {
       image 'mcr.microsoft.com/playwright:v1.17.2-focal'
     } 
   }
+  environment {
+    WORD = 'labas'
+  }
   stages {
     stage('install playwright') {
       steps {

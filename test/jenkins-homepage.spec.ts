@@ -7,5 +7,5 @@ test('Jenkins Homepage', async ({ page, browserName }) => {
   await expect(page).toHaveTitle(/Jenkins/);
 
   // await page.screenshot({ path: 'homepage-'+browserName+'.png', fullPage: true });
-  console.log(process.env.WORD)
+  console.log(${WORD})
 });
