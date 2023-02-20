@@ -19,7 +19,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-          npx playwright test jenkins-homepage.spec.ts
+          npx playwright test jenkins-homepage.spec.ts --reporter=html
         '''
       }
     }
