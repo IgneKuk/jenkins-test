@@ -9,3 +9,4 @@ test('Jenkins Homepage', async ({ page, browserName }) => {
   // await page.screenshot({ path: 'homepage-'+browserName+'.png', fullPage: true });
   // console.log(${WORD})
 });
+
