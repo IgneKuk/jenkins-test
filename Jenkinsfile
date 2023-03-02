@@ -1,16 +1,24 @@
 pipeline {
-  stage("Playwright tests") {
-    agent {
-      docker { 
-            image 'mcr.microsoft.com/playwright:v1.17.2-focal'
+  agent { 
+    docker { 
+      image 'mcr.microsoft.com/playwright:v1.17.2-focal'
+    } 
+  }
+  stages {
+    stage('install playwright') {
+      steps {
+        sh '''
+          npm i -D @playwright/test
+          npx playwright install
+        '''
       }
     }
-    steps {
-      sh '''
-            npm i - D @playwright/test
-            npx playwright install
-            npx playwright test jenkins-homepgae.spec.ts
-      '''
+    stage('test') {
+      steps {
+        sh '''
+          npx playwright test jenkins-homepage.spec.ts
+        '''
+      }
     }
   }
 }
